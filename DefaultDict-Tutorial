@@ -1,0 +1,18 @@
+from collections import defaultdict
+
+a, b = map(int, input().split())
+groupa = defaultdict(list)
+
+# indexing words
+for i in range(a):
+    word_a = input()
+    groupa[word_a].append(i+1)
+
+# extracting words based on desired key
+for x in range(a,a+b):
+    groupb = input()
+    if groupb in groupa.keys():
+        output = groupa[groupb]
+        print(" ".join(map(str, output)))
+    else :
+        print(-1)

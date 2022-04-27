@@ -1,0 +1,17 @@
+from collections import Counter
+
+# Create mapping and variables
+num_of_shoes = input()
+shoes_size = Counter(map(int, input().split()))
+num_of_cust = int(input())
+
+profit = 0
+
+# looping thru size and price for iterations
+for x in range(num_of_cust):
+    size, price = map(int, input().split())
+    if shoes_size[size] > 0:
+        shoes_size[size] -= 1
+        profit += price
+        
+print(profit)
